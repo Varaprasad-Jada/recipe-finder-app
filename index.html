@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Recipe Finder</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Montserrat for a modern, friendly look -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons (e.g., search, heart, cart, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Section: Welcome message and Search bar -->
+        <header class="app-header">
+            <div class="welcome-section">
+                <span>Welcome!</span>
+                <h1>What do you want to cook today?</h1>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" id="recipeInput" placeholder="Search by Recipes or Ingredients..." spellcheck="false">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </header>
+
+        <!-- Category Filter Buttons -->
+        <section class="categories-section">
+            <div class="category-buttons" id="categoryButtons">
+                <!-- Buttons will be dynamically generated or hardcoded here -->
+                <button class="category-btn active" data-category="Indian">Indian</button>
+                <button class="category-btn" data-category="Mexican">Mexican</button>
+                <button class="category-btn" data-category="Chinese">Chinese</button>
+                <button class="category-btn" data-category="Japanese">Japanese</button>
+                <button class="category-btn" data-category="Italian">Italian</button>
+                <button class="category-btn" data-category="Thai">Thai</button>
+                <button class="category-btn" data-category="Favorites">My Favorites</button> <!-- New button for favorites -->
+            </div>
+        </section>
+
+        <!-- Main Recipe Results Section -->
+        <main class="recipes-section">
+            <h2 id="resultsTitle">Trending Recipes</h2>
+            <!-- Loading and error messages (initially hidden) -->
+            <div class="loading-indicator" style="display: none;">
+                <i class="fas fa-spinner fa-spin"></i> Loading Recipes...
+            </div>
+            <div class="error-message" style="display: none;">
+                <i class="fas fa-exclamation-triangle"></i> No recipes found. Try a different search!
+            </div>
+            <!-- Grid where recipe cards will be displayed -->
+            <div class="recipe-grid" id="recipeGrid">
+                <!-- Recipe cards will be dynamically loaded here by JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Recipe Details Modal (Hidden by default, shown on recipe card click) -->
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modalRecipeTitle"></h2>
+            <img src="" alt="Recipe Image" id="modalRecipeImage">
+            <div class="modal-body">
+                <h3>Ingredients:</h3>
+                <ul id="modalIngredientsList"></ul>
+                <h3>Instructions:</h3>
+                <p id="modalInstructions"></p>
+                <!-- YouTube link for recipe video (if available) -->
+                <a href="#" id="modalYoutubeLink" target="_blank" style="display:none;">Watch on YouTube <i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
